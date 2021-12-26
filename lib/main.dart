@@ -27,6 +27,7 @@ final _router = GoRouter(
     GoRoute(
         path: '/', builder: (context, state) => const Politicas(), routes: []),
     GoRoute(
+      name: '/termino_condicioness',
       path: '/termino_condicioness',
       builder: (context, state) => const UseConditions(),
     ),
