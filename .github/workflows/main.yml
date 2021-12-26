@@ -7,14 +7,13 @@ on:
 jobs:
   build:
     name: Build Web
-    env:
-      my_secret: ${{secrets.hosting_secret}}
+    
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
       - uses: subosito/flutter-action@v1
         with:
-          channel: 'dev'
+          channel: 'stable'
       - run: flutter config --enable-web
       - run: flutter pub get
       - run: flutter build web --release
