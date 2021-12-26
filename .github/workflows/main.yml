@@ -18,18 +18,5 @@ jobs:
       - run: flutter pub get
       - run: flutter build web --release
       - run: |
-          cd build/web
-          git init
-          # in line 24 and 25 type your email id and username respectively
-          #git config --global user.email email_ids
-          #git config --global user.name Tristan-2021 
-          git config --global user.email candangasrodriguito@gmail.com
-          git config --global user.name Tristan-2021 
-          git status
-          # in line 30 after @ add your repo link  
-          # git remote add origin https://${{secrets.TOKEN}}@repo_link
-          git remote add origin https://${{secrets.TOKEN}}@github.com/Tristan-2021/web4.git
-          git checkout -b gh-pages
-          git add --all
-          git commit -m "update"
-          git push origin gh-pages -f
+          sudo npm install -g firebase-tools
+          firebase deploy --token ${{ secrets.FIREBASE_TOKEN }} 
