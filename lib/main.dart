@@ -23,12 +23,16 @@ class MyApp extends StatelessWidget {
 }
 
 final _router = GoRouter(
+  //debugLogDiagnostics: true,
   routes: [
     GoRoute(
-        path: '/', builder: (context, state) => const Politicas(), routes: []),
+        name: 'home',
+        path: '/',
+        builder: (context, state) => const Politicas(),
+        routes: []),
     GoRoute(
-      name: '/termino_condicioness',
-      path: '/termino_condicioness',
+      //name: '/',
+      path: '/politicas',
       builder: (context, state) => const UseConditions(),
     ),
   ],
@@ -49,6 +53,19 @@ class Politicas extends StatelessWidget {
 
 class UseConditions extends StatelessWidget {
   const UseConditions({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return const Scaffold(
+      body: Center(
+        child: Text('UseConditions'),
+      ),
+    );
+  }
+}
+
+class Page1 extends StatelessWidget {
+  const Page1({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
